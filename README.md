@@ -1,52 +1,58 @@
-# **CSV Analysis and Visualization Tool**
+# CSV Analysis and Visualization Tool
 
-Welcome to the **CSV Analysis and Visualization Tool**, an interactive Python script designed for analyzing and visualizing data stored in CSV files. This tool is flexible, user-friendly, and can adapt to various CSV file formats.
+This project is a command-line tool for analyzing and visualizing CSV data. It allows users to load a CSV file, explore its contents, and generate visualizations for categorical and time-based data.
 
-## **Features**
-- Dynamic file selection for seamless analysis.
-- Automatically adapts to CSVs with different column structures.
-- Provides data visualizations such as bar charts and line graphs for better insights.
-- Handles invalid or missing data gracefully.
+## Features
 
-## **Installation**
-To use the CSV Analysis and Visualization Tool, follow these steps:
+- **List Available Files**: Displays all files in the current directory for selection.
+- **Load CSV Data**: Reads a CSV file and stores its content as a list of dictionaries.
+- **View Dataset Information**: Shows the first five rows, total row count, and column names.
+- **Categorical Data Visualization**: Generates bar charts for selected categorical columns.
+- **Time-Based Data Visualization**: Creates line charts for datetime-based columns.
 
-1. Ensure you have Python installed on your system. You can download it from the [official Python website](https://www.python.org/).
-2. Install the required library `matplotlib` for data visualization by running the following command in your terminal:
+## Requirements
+
+Ensure you have the following dependencies installed:
+
+```bash
+pip install matplotlib
+```
+
+## Usage
+
+1. Run the script:
+
    ```bash
-   pip install matplotlib
+   python CSVAnalysis.py
+   ```
 
-## **Usage**
-1. Clone or download this repository to your local machine.
-2. Navigate to the directory containing the script and your CSV files.
-3. Run the script using the following command:
-   ```bash
-   python csv_analysis_tool.py
+2. Select a CSV file from the list.
+3. Choose from the menu options to:
+   - View dataset information.
+   - Visualize categorical data.
+   - Visualize time-based data.
 
-## **How It Works**
-### **File Selection**
-- When you start the program, the tool lists all the files in the current directory.
-- You can select a CSV file to analyze by entering the corresponding number from the displayed list.
+## Example
 
-### **Analysis Menu**
-Once you load a CSV file, the program provides the following options:
-1. **View Dataset Info**:
-   - Displays the first 5 rows of your CSV file along with the total number of rows and column names.
-2. **Visualize Categorical Data**:
-   - Choose any column with categorical values (e.g., event level, source) to generate a bar chart that shows the distribution of values in the selected column.
-3. **Visualize Time-Based Data**:
-   - Select a column containing datetime values to create a line chart that displays the frequency of events or entries over time.
-4. **Exit Analysis**:
-   - Allows you to close the program once your analysis is complete.
+When executed, the script will guide you through selecting a CSV file and choosing an analysis option.
 
-### **Error Handling**
-- The script automatically skips empty or invalid entries while processing data.
-- If you select an invalid menu option, you’ll be prompted to try again.
+```
+Welcome to the Generic CSV Analysis and Visualization Tool!
+Files in the current directory:
+1. data.csv
+2. report.csv
 
-## **Examples**
-### **Bar Chart**
-Visualizing the distribution of event levels (e.g., Error, Warning):
-```plaintext
-Bar Chart Title: Distribution of Event Levels
-X-Axis: Levels (Error, Warning)
-Y-Axis: Count of Occurrences
+Enter the number of the file you want to load: 1
+
+File 'data.csv' loaded successfully!
+
+=== Data Analysis Menu ===
+1. View first 5 rows and dataset info.
+2. Visualize a categorical column (e.g., Levels, Sources).
+3. Visualize a time-based column (e.g., Date and Time).
+4. Exit analysis.
+```
+
+## License
+
+This project is licensed under the MIT License.
